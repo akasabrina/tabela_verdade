@@ -51,7 +51,7 @@ def CriaTabela(nome_tabela):
     os.system("cls")
 
 
-def ConstroiTabela():
+def TabelaVerdade():
     cnt = Conectivo() # o tipo de conectivo influencia na forma da construção da tabela verdade
 
     match cnt:
@@ -89,5 +89,5 @@ def ConstroiTabela():
     return df
     
 if(__name__ == '__main__'):
-    tabela_verdade = ConstroiTabela()
+    tabela_verdade = TabelaVerdade()
     print(tabela_verdade)
