@@ -7,6 +7,7 @@ import numpy as np
 import os 
 df = pd.DataFrame()
 
+
 def Conectivo():
     while True:
 
@@ -61,6 +62,7 @@ def TabelaVerdade():
             cond = [df["A"] == 1, df["A"] == 0]
             choiceNOT = [0, 1]
             df["¬A"] = np.select(cond, choiceNOT, default=np.nan)
+            print("Tabela verdade com o conectivo lógico NEGAÇÃO ¬\n")
 
         case _:
             CriaTabela('B')
@@ -70,18 +72,22 @@ def TabelaVerdade():
             if cnt == 2: # contrução da tabela verdade com o conectivo lógico "Conjunção"
                 choiceAND = [1, 0, 0, 0]
                 df["A ∧ B"] = np.select(cond, choiceAND, default=np.nan)
+                print("Tabela verdade com o conectivo lógico CONJUNÇÃO ∧\n")
             
             elif cnt == 3: # contrução da tabela verdade com o conectivo lógico "Disjunção"
                 choiceOR = [1, 1, 1, 0]
                 df["A V B"] = np.select(cond, choiceOR, default=np.nan)
+                print("Tabela verdade com o conectivo lógico DISJUNÇÃO V\n")
             
             elif cnt == 4: # contrução da tabela verdade com o conectivo lógico "Condicional"
                 choiceCOND = [1, 0, 1, 1]
                 df["A → B"] = np.select(cond, choiceCOND, default=np.nan)
+                print("Tabela verdade com o conectivo lógico CONDICIONAL →\n")
             
             elif cnt == 5: # contrução da tabela verdade com o conectivo lógico "Bicondicional"
                 choiceBICOND = [1, 0, 0, 1]
                 df["A ↔ B"] = np.select(cond, choiceBICOND, default=np.nan)
+                print("Tabela verdade com o conectivo lógico BICONDICIONAL ↔\n")
 
     for col in df.columns.values:
         df[col] = df[col].astype('int64')
