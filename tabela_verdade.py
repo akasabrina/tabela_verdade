@@ -1,6 +1,6 @@
 # calculadora de tabela verdade
 import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.simplefilter(action='ignore', category=DeprecationWarning)
 
 import pandas as pd
 import numpy as np
